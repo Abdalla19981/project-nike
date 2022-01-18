@@ -1,5 +1,5 @@
 <?php 
-    include("./connect_db.php");
+    include("./review.php");
 
     $sql = "SELECT * FROM `nike`";
 
