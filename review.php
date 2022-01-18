@@ -13,7 +13,7 @@ $sql =  "INSERT INTO `review` (`id`, `firstname`, `sms`, `nummer`, `email` )
  VALUES (NULL, '{$_POST["firstname"]}', '{$_POST["sms"]}', '{$_POST["nummer"]}', '{$_POST["email"]}'  );";
 
 mysqli_query($conn , $sql );
-
+var_dump($record);
 
  header("Refresh:3; url=./index.html");
 
