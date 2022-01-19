@@ -1,5 +1,4 @@
 <?php 
-    include("./review.php");
 
     $sql = "SELECT * FROM `nike`";
 
@@ -11,13 +10,15 @@
         // var_dump($record);
 
         $row .= "<tr>
-                 <td>{$record["ID"]}</td> 
-                 <td>{$record["Name"]}</td> 
-                 <td>{$record["Email"]}</td>
-                 <td>{$record["Phone"]}</td>
-                 <td>{$record["Message"]}</td>
+                 <td>{$record["id"]}</td> 
+                 <td>{$record["firstname"]}</td> 
+                 <td>{$record["sms"]}</td>
+                 <td>{$record["nummer"]}</td>
+                 <td>{$record["email"]}</td>
                 </tr>";
     }
+
+    var_dump($result)
 ?>
 
 

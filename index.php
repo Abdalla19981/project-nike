@@ -1,3 +1,37 @@
+<?php 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$databasename ="nike";
+ 
+
+$conn = mysqli_connect( $servername, $username , $password , $databasename );
+
+    $sql = "SELECT * FROM `review`";
+    $result = mysqli_query($conn, $sql);
+
+    $rows = [];
+    while ( $record = mysqli_fetch_assoc($result)){
+        // var_dump($record);
+        $rows[] = $record;
+
+        // $row .= "<tr>
+        //          <td>{$record["id"]}</td> 
+        //          <td>{$record["firstname"]}</td> 
+        //          <td>{$record["sms"]}</td>
+        //          <td>{$record["nummer"]}</td>
+        //          <td>{$record["email"]}</td>
+        //         </tr>";
+    }
+
+    // var_dump($rows);
+
+    foreach($rows as $row){
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -259,7 +293,7 @@
                       </div>
                     </div>
                     <!--Comments---------------------------------------->
-                    <div class="client-comment">
+                    <!-- <div class="client-comment">
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident
                         temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur
@@ -267,35 +301,11 @@
                         incidunt blanditiis sed atque cumque.
                       </p>
                     </div>
-                  </div>
+                  </div> -->
                   <!--BOX-3-------------->
-                  <div class="testimonial-box">
-                    <!--top------------------------->
-                    <div class="box-top">
-                      <!--profile----->
-                      <div class="profile">
-                        <!--img---->
-                        <div class="profile-img">
-                          <img src="images/c-3.jpg" />
-                        </div>
-                        <!--name-and-username-->
-                        <div class="name-user">
-                          <strong>Euer Gang</strong>
-                          <span>@DanielRedclief</span>
-                        </div>
-                      </div>
-                      <!--reviews------>
-                      <div class="reviews">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <!--Empty star-->
-                      </div>
-                    </div>
+                 
                     <!--Comments---------------------------------------->
-                    <div class="client-comment">
+                    <!-- <div class="client-comment">
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident
                         temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur
@@ -303,7 +313,9 @@
                         incidunt blanditiis sed atque cumque.
                       </p>
                     </div>
-                  </div>
+                  </div> -->
+
+                  <?php foreach($rows as $row): ?>
                   <!--BOX-4-------------->
                   <div class="testimonial-box">
                     <!--top------------------------->
@@ -316,7 +328,7 @@
                         </div>
                         <!--name-and-username-->
                         <div class="name-user">
-                          <strong>Oliva</strong>
+                          <strong><?php echo $row['firstname']?></strong>
                           <span>@Olivaadward</span>
                         </div>
                       </div>
@@ -340,6 +352,11 @@
                       </p>
                     </div>
                   </div>
+                  <?php endforeach;?>
+
+
+
+                  
                 </div>
               </div>
             </div>
