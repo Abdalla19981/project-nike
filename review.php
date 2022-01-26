@@ -14,7 +14,7 @@ $sql =  "INSERT INTO `review` (`id`, `firstname`, `sms`, `nummer`, `email` )
 
 mysqli_query($conn , $sql );
 
- header("Refresh:3; url=./index.html");
+ header("Refresh:3; url=./index.php");
 
 ?>
 <link rel="stylesheet" href="style.css">
